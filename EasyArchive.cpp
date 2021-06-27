@@ -5,7 +5,23 @@
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int menu_param;
+    char filename[256];
+    std::cout << "Please choose archivating(1) dearchivating(2) or another to quit\n";
+    std::cin >> menu_param;
+
+    if (1 == menu_param) // archivator
+    {
+
+    } 
+    else if (2 == menu_param) // dearchivator
+    {
+
+    }
+    else // quit
+    {
+        return 0;
+    }
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
