@@ -2,26 +2,43 @@
 //
 
 #include <iostream>
+#include <cstdio>
 
 int main()
 {
-    int menu_param;
-    char filename[256];
+    int menu_param; // parameter to choosing archive or dearchive
+    char filename[FILENAME_MAX]; // filename
+    FILE* fin; // pointer to input file
+    errno_t err;
     std::cout << "Please choose archivating(1) dearchivating(2) or another to quit\n";
     std::cin >> menu_param;
+    std::cout << "Please enter filename\n";
+    std::cin >> filename;
     
-    if (1 == menu_param) // archivator
-    {
-        std::cout << "Please choose archivating(1) dearchivating(2) or another to quit\n";
-    } 
-    else if (2 == menu_param) // dearchivator
-    {
+    err = fopen_s(&fin, filename, "r");
 
-    }
-    else // quit
+    if (!err)
     {
+        // File opened. Lets work
+        if (1 == menu_param) // archivator
+        {
+
+        }
+        else if (2 == menu_param) // dearchivator
+        {
+
+        }
+        fclose (fin);
         return 0;
     }
+    else 
+    {
+        // File is not opened
+        std::cout << "Error of opening file";
+        return 0;
+    }
+    
+    
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
