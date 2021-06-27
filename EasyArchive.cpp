@@ -9,10 +9,10 @@ int main()
     char filename[256];
     std::cout << "Please choose archivating(1) dearchivating(2) or another to quit\n";
     std::cin >> menu_param;
-
+    
     if (1 == menu_param) // archivator
     {
-
+        std::cout << "Please choose archivating(1) dearchivating(2) or another to quit\n";
     } 
     else if (2 == menu_param) // dearchivator
     {
